@@ -25,7 +25,7 @@ public class SimpleSDLExample {
 
     public static void main(String[] args) throws IOException {
         SchemaParser schemaParser = new SchemaParser();
-        final URL resource = Thread.currentThread().getContextClassLoader().getResource("starter.graphql");
+        final URL resource = Thread.currentThread().getContextClassLoader().getResource("root.graphql");
         assert resource != null;
         final TypeDefinitionRegistry tdr = schemaParser.parse(resource.openStream());
         final RuntimeWiring rw = RuntimeWiring.newRuntimeWiring()
