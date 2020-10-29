@@ -33,20 +33,18 @@ public class SimpleSDLExample {
                 .build();
         SchemaGenerator sg = new SchemaGenerator();
         final GraphQLSchema executableSchema = sg.makeExecutableSchema(tdr, rw);
-
         final GraphQL graphQLObj = GraphQL.newGraphQL(executableSchema).build();
 
         final ExecutionResult executionResult = graphQLObj.execute("{user{id name}}");
         LOG.info("execution result: {}", executionResult);
         LOG.info("execution result spec: {}", executionResult.toSpecification());
-
     }
 
     static class UserDataFetcher implements DataFetcher<User> {
         static final Logger LOG = LoggerFactory.getLogger(UserDataFetcher.class);
 
         @Override
-        public User get(DataFetchingEnvironment environment) throws Exception {
+        public User get(DataFetchingEnvironment environment) {
             final List<SelectedField> fields = environment.getSelectionSet().getFields();
             final Set<String> selectedFields = fields.stream().map(SelectedField::getName).collect(Collectors.toSet());
             LOG.info("selectedFields: {}", selectedFields);
