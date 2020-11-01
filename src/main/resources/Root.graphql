@@ -1,0 +1,8 @@
+type Query {
+    _dummy : String
+}
+
+type Mutation {
+    dummyOperation(input: String!) : String!
+}
+
