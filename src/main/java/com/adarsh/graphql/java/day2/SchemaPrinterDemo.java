@@ -14,7 +14,42 @@ import static graphql.schema.GraphQLObjectType.newObject;
 public class SchemaPrinterDemo {
 
     public static final Logger LOGGER = LoggerFactory.getLogger(SchemaPrinterDemo.class);
+/*
+schema {
+  query: Laptop
+}
 
+"Directs the executor to include this field or fragment only when the `if` argument is true"
+directive @include(
+    "Included when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Directs the executor to skip this field or fragment when the `if`'argument is true."
+directive @skip(
+    "Skipped when true."
+    if: Boolean!
+  ) on FIELD | FRAGMENT_SPREAD | INLINE_FRAGMENT
+
+"Marks the field or enum value as deprecated"
+directive @deprecated(
+    "The reason for the deprecation"
+    reason: String = "No longer supported"
+  ) on FIELD_DEFINITION | ENUM_VALUE
+
+"Exposes a URL that specifies the behaviour of this scalar."
+directive @specifiedBy(
+    "The URL that specifies the behaviour of this scalar."
+    url: String!
+  ) on SCALAR
+
+type Laptop {
+  cpuCores: Int
+  memoryInGB: Int
+  os: String
+}
+
+*/
     public static void main(String[] args) {
         final GraphQLObjectType queryTypes = newObject()
                 .name("Laptop")
