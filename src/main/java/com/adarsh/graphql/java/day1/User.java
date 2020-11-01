@@ -1,4 +1,4 @@
-package com.adarsh.graphql.java;
+package com.adarsh.graphql.java.day1;
 
 
 public class User {

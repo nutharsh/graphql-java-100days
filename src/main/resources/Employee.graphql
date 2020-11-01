@@ -1,0 +1,8 @@
+type Employee {
+    id : ID!
+    name: String!
+    dob: String!
+}
+extend type Query {
+    employees : [Employee]!
+}
